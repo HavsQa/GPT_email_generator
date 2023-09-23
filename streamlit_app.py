@@ -43,7 +43,7 @@ def gen_mail_contents(email_contents):
         input_text = email_contents[topic]
         rephrased_content = openai.Completion.create(
             engine="text-davinci-002",
-            prompt=f"Rewrite the text to be elaborate and polite.\nAbbreviations need to be replaced.\nText: {input_text}\nRewritten text:",
+            prompt=f"You will always respond in the language of the text provided.Rewrite the text to be elaborate and polite.\nAbbreviations need to be replaced.\nText: {input_text}\nRewritten text:",
             # prompt=f"Rewrite the text to sound professional, elaborate and polite.\nText: {input_text}\nRewritten text:",
             temperature=0.8,
             max_tokens=len(input_text)*3,
@@ -69,7 +69,7 @@ def gen_mail_format(sender, recipient, style, email_contents):
 
     email_final_text = openai.Completion.create(
         engine="text-davinci-002",
-        prompt=f"Write a professional email sounds {style} and includes Content1 and Content2 in that order.\n\nSender: {sender}\nRecipient: {recipient} {contents_str}\n\nEmail Text:",
+        prompt=f"Write a professional email sounds {style} and includes Content1 and Content2 in that order.Y ou will always respond in the language of the topics provided.\n\nSender: {sender}\nRecipient: {recipient} {contents_str}\n\nEmail Text:",
         # prompt=f"Write a professional sounding email text that includes all of the following contents separately.\nThe text needs to be written to adhere to the specified writing styles and abbreviations need to be replaced.\n\nSender: {sender}\nRecipient: {recipient} {contents_str}\nWriting Styles: motivated, formal\n\nEmail Text:",
         temperature=0.8,
         max_tokens=contents_length*2,
