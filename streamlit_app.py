@@ -104,7 +104,7 @@ def main_gpt3emailgen():
             input_recipient = st.text_input('Destinataire', '')
         with col3:
             input_style = st.selectbox('Style',
-                                       ('Formel :briefcase:', 'Motivé :smile:', 'Préoccupé :worried:', 'Déçu :disappointed:'),
+                                       ('Formel', 'Motivé', 'Préoccupé', 'Déçu'),
                                        index=0)
         with col4:
             st.write("\n")  # add spacing
