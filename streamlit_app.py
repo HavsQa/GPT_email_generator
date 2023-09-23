@@ -110,7 +110,7 @@ def main_gpt3emailgen():
             st.write("\n")  # add spacing
             st.write("\n")  # add spacing
             if st.button("C'est parti ! :incoming_envelope:"):
-                with st.spinner():
+                with st.spinner(text="C'est dans le four..:fire:"):
 
                     input_contents = []  # let the user input all the data
                     if (input_c1 != "") and (input_c1 != 'topic 1'):
@@ -131,7 +131,7 @@ def main_gpt3emailgen():
                                                          input_contents)
     if email_text != "":
         st.write('\n')  # add spacing
-        st.subheader('\nVous avez l’air incroyablement professionnel !\n')
+        st.subheader('\nVoici votre mail!\n')
         with st.expander("Votre mail :outbox_tray:", expanded=True):
             st.markdown(email_text)  #output the results
 
