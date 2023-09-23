@@ -87,6 +87,7 @@ def main_gpt3emailgen():
     st.header('Optimisez votre efficacité et économisez précieusement votre temps en générant vos mails ! :alarm_clock: ')
     st.markdown('[HavsQa](https://www.linkedin.com/in/guillaume-matilla-854228204/)')
     st.markdown("Les coûts d'utilisation, notamment pour l'API, sont à ma charge. Je compte sur votre utilisation judicieuse de l'application. Merci !")
+    st.markdown('Guillaume M | [HavsQa](https://www.linkedin.com/in/guillaume-matilla-854228204/)')
     st.write('\n')  # add spacing
 
     st.subheader('\nDe quoi parle votre e-mail ?\n')
