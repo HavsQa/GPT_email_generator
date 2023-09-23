@@ -64,7 +64,7 @@ def gen_mail_format(sender, recipient, style, email_contents):
 
     contents_str, contents_length = "", 0
     for topic in range(len(email_contents)):  # aggregate all contents into one
-        contents_str = contents_str + f"\nContent{topic+1}: " + email_contents[topic]
+        contents_str = contents_str + f"\nSujet{topic+1}: " + email_contents[topic]
         contents_length += len(email_contents[topic])  # calc total chars
 
     email_final_text = openai.Completion.create(
