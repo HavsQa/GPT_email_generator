@@ -86,6 +86,7 @@ def main_gpt3emailgen():
     st.image('img/image_banner.png')  # TITLE and Creator information
     st.markdown('Optimisez votre efficacité et économisez précieusement votre temps en générant vos mails :alarm_clock: '
         '[HavsQa](https://www.linkedin.com/in/guillaume-matilla-854228204/) - ')
+    st.markdown("Les coûts d'utilisation, notamment pour l'API, sont à ma charge. Je compte sur votre utilisation judicieuse de l'application. Merci !")
     st.write('\n')  # add spacing
 
     st.subheader('\nDe quoi parle votre e-mail ?\n')
