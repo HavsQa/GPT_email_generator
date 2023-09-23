@@ -84,12 +84,12 @@ def gen_mail_format(sender, recipient, style, email_contents):
 def main_gpt3emailgen():
 
     st.image('img/image_banner.png')  # TITLE and Creator information
-    st.markdown('Generate professional sounding emails based on your direct comments - powered by Artificial Intelligence (OpenAI GPT-3) Implemented by '
+    st.markdown('Optimisez votre efficacité et économisez précieusement votre temps en générant vos mails :alarm_clock: '
         '[HavsQa](https://www.linkedin.com/in/guillaume-matilla-854228204/) - ')
     st.write('\n')  # add spacing
 
-    st.subheader('\nWDe quoi parle votre e-mail ?\n')
-    with st.expander("SECTION - Email Input", expanded=True):
+    st.subheader('\nDe quoi parle votre e-mail ?\n')
+    with st.expander("Corps du mail :inbox_tray:", expanded=True):
 
         input_c1 = st.text_input("Entrez le contenu de l'e-mail ci-dessous ! (actuellement 2x sujets séparés pris en charge)", 'Sujet 1')
         input_c2 = st.text_input('', 'Sujet 2 (optionnel)')
@@ -97,9 +97,9 @@ def main_gpt3emailgen():
         email_text = ""  # initialize columns variables
         col1, col2, col3, space, col4 = st.columns([5, 5, 5, 0.5, 5])
         with col1:
-            input_sender = st.text_input('Expéditeur', '[rephraise]')
+            input_sender = st.text_input('Expéditeur', '')
         with col2:
-            input_recipient = st.text_input('Destinataire', '[recipient]')
+            input_recipient = st.text_input('Destinataire', '')
         with col3:
             input_style = st.selectbox('Style',
                                        ('formel', 'motivé', 'préoccupé', 'déçu'),
@@ -107,7 +107,7 @@ def main_gpt3emailgen():
         with col4:
             st.write("\n")  # add spacing
             st.write("\n")  # add spacing
-            if st.button("C'est parti !"):
+            if st.button("C'est parti ! :incoming_envelope:"):
                 with st.spinner():
 
                     input_contents = []  # let the user input all the data
@@ -130,7 +130,7 @@ def main_gpt3emailgen():
     if email_text != "":
         st.write('\n')  # add spacing
         st.subheader('\nVous avez l’air incroyablement professionnel !\n')
-        with st.expander("SECTION - Email Output", expanded=True):
+        with st.expander("Votre mail :outbox_tray:", expanded=True):
             st.markdown(email_text)  #output the results
 
 
