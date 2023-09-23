@@ -5,20 +5,20 @@ import openai
 import streamlit as st
 
 # DESIGN implement changes to the standard streamlit UI/UX
-st.set_page_config(page_title="rephraise", page_icon="img/rephraise_logo.png",)
+st.set_page_config(page_title="Octomail", page_icon="img/rephraise_logo.png",)
 # Design move app further up and remove top padding
 st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
     unsafe_allow_html=True)
 # Design change hyperlink href link color
-st.markdown('''<style>.css-znku1x a {color: #9d03fc;}</style>''',
+st.markdown('''<style>.css-znku1x a {color: #F37748;}</style>''',
     unsafe_allow_html=True)  # darkmode
-st.markdown('''<style>.css-znku1x a {color: #9d03fc;}</style>''',
+st.markdown('''<style>.css-znku1x a {color: #F37748;}</style>''',
     unsafe_allow_html=True)  # lightmode
 # Design change height of text input fields headers
 st.markdown('''<style>.css-qrbaxs {min-height: 0.0rem;}</style>''',
     unsafe_allow_html=True)
 # Design change spinner color to primary color
-st.markdown('''<style>.stSpinner > div > div {border-top-color: #9d03fc;}</style>''',
+st.markdown('''<style>.stSpinner > div > div {border-top-color: #F37748;}</style>''',
     unsafe_allow_html=True)
 # Design change min height of text input box
 st.markdown('''<style>.css-15tx938{min-height: 0.0rem;}</style>''',
@@ -85,31 +85,29 @@ def main_gpt3emailgen():
 
     st.image('img/image_banner.png')  # TITLE and Creator information
     st.markdown('Generate professional sounding emails based on your direct comments - powered by Artificial Intelligence (OpenAI GPT-3) Implemented by '
-        '[stefanrmmr](https://www.linkedin.com/in/stefanrmmr/) - '
-        'view project source code on '
-        '[GitHub](https://github.com/stefanrmmr/gpt3_email_generator)')
+        '[HavsQa](https://www.linkedin.com/in/guillaume-matilla-854228204/) - ')
     st.write('\n')  # add spacing
 
-    st.subheader('\nWhat is your email all about?\n')
+    st.subheader('\nWDe quoi parle votre e-mail ?\n')
     with st.expander("SECTION - Email Input", expanded=True):
 
-        input_c1 = st.text_input('Enter email contents down below! (currently 2x seperate topics supported)', 'topic 1')
-        input_c2 = st.text_input('', 'topic 2 (optional)')
+        input_c1 = st.text_input("Entrez le contenu de l'e-mail ci-dessous ! (actuellement 2x sujets séparés pris en charge)", 'Sujet 1')
+        input_c2 = st.text_input('', 'Sujet 2 (optionnel)')
 
         email_text = ""  # initialize columns variables
         col1, col2, col3, space, col4 = st.columns([5, 5, 5, 0.5, 5])
         with col1:
-            input_sender = st.text_input('Sender Name', '[rephraise]')
+            input_sender = st.text_input('Expéditeur', '[rephraise]')
         with col2:
-            input_recipient = st.text_input('Recipient Name', '[recipient]')
+            input_recipient = st.text_input('Destinataire', '[recipient]')
         with col3:
-            input_style = st.selectbox('Writing Style',
-                                       ('formal', 'motivated', 'concerned', 'disappointed'),
+            input_style = st.selectbox('Style',
+                                       ('formel', 'motivé', 'préoccupé', 'déçu'),
                                        index=0)
         with col4:
             st.write("\n")  # add spacing
             st.write("\n")  # add spacing
-            if st.button('Generate Email'):
+            if st.button('C'est parti !'):
                 with st.spinner():
 
                     input_contents = []  # let the user input all the data
@@ -119,9 +117,9 @@ def main_gpt3emailgen():
                         input_contents.append(str(input_c2))
 
                     if (len(input_contents) == 0):  # remind user to provide data
-                        st.write('Please fill in some contents for your message!')
+                        st.write('Veuillez remplir certains contenus pour votre message !')
                     if (len(input_sender) == 0) or (len(input_recipient) == 0):
-                        st.write('Sender and Recipient names can not be empty!')
+                        st.write("Les noms de l'expéditeur et du destinataire ne peuvent pas être vides !")
 
                     if (len(input_contents) >= 1):  # initiate gpt3 mail gen process
                         if (len(input_sender) != 0) and (len(input_recipient) != 0):
@@ -131,7 +129,7 @@ def main_gpt3emailgen():
                                                          input_contents)
     if email_text != "":
         st.write('\n')  # add spacing
-        st.subheader('\nYou sound incredibly professional!\n')
+        st.subheader('\nVous avez l’air incroyablement professionnel !\n')
         with st.expander("SECTION - Email Output", expanded=True):
             st.markdown(email_text)  #output the results
 
