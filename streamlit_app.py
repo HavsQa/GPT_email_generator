@@ -107,7 +107,7 @@ def main_gpt3emailgen():
         with col4:
             st.write("\n")  # add spacing
             st.write("\n")  # add spacing
-            if st.button('C'est parti !'):
+            if st.button("C'est parti !"):
                 with st.spinner():
 
                     input_contents = []  # let the user input all the data
