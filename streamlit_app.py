@@ -84,8 +84,8 @@ def gen_mail_format(sender, recipient, style, email_contents):
 def main_gpt3emailgen():
 
     st.image('img/image_banner.png')  # TITLE and Creator information
-    st.markdown('Optimisez votre efficacité et économisez précieusement votre temps en générant vos mails :alarm_clock: '
-        '[HavsQa](https://www.linkedin.com/in/guillaume-matilla-854228204/) - ')
+    st.h1(':orange[**Optimisez votre efficacité et économisez précieusement votre temps en générant vos mails**] :alarm_clock: ')
+    st.markdown(':orange[[HavsQa]](https://www.linkedin.com/in/guillaume-matilla-854228204/)')
     st.markdown("Les coûts d'utilisation, notamment pour l'API, sont à ma charge. Je compte sur votre utilisation judicieuse de l'application. Merci !")
     st.write('\n')  # add spacing
 
@@ -103,7 +103,7 @@ def main_gpt3emailgen():
             input_recipient = st.text_input('Destinataire', '')
         with col3:
             input_style = st.selectbox('Style',
-                                       ('formel', 'motivé', 'préoccupé', 'déçu'),
+                                       ('Formel :briefcase:', 'Motivé :smile:', 'Préoccupé :worried:', 'Déçu :disappointed:'),
                                        index=0)
         with col4:
             st.write("\n")  # add spacing
