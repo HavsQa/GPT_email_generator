@@ -95,9 +95,10 @@ def main_gpt3emailgen():
     st.write('\n')  # add spacing
 
     st.subheader('\nDe quoi parle votre e-mail ?\n')
+    st.write(':information_source: La qualité de la production étant intimement liée, il vaut mieux fournir un contexte minimal. Par exemple, il serait plus judicieux de dire "Transmettre le devis à Monsieur X" plutôt que simplement "envoi devis".')
     with st.expander("Corps du mail :inbox_tray:", expanded=True):
 
-        input_c1 = st.text_input("Entrez le contenu de l'e-mail ci-dessous ! (actuellement 2x sujets séparés pris en charge)", 'Sujet 1')
+        input_c1 = st.text_input("Entrez le contenu de l'e-mail ci-dessous ! (actuellement 2 sujets séparés pris en charge)", 'Sujet 1')
         input_c2 = st.text_input('', 'Sujet 2 (optionnel)')
 
         email_text = ""  # initialize columns variables
