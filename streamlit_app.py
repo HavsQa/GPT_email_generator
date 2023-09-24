@@ -84,12 +84,14 @@ def main_gpt3emailgen():
     st.image('img/image_banner.png')  # TITLE and Creator information
     st.header('Optimisez votre efficacité et économisez précieusement votre temps en générant vos mails ! :alarm_clock: ')
     
-    st.markdown("Les coûts d'utilisation, notamment pour l'API, sont à ma charge. Je compte sur votre utilisation judicieuse de l'application. Merci !")
-    st.markdown('Guillaume M | [HavsQa](https://www.linkedin.com/in/guillaume-matilla-854228204/)')
+    st.markdown("Je souhaite souligner que les coûts associés à l'utilisation de l'application, notamment ceux relatifs à l'API (davinci-002 d'OpenAI), sont pris en charge de manière proactive. Cependant, si vous trouvez notre application bénéfique pour vos besoins et que vous souhaitez contribuer à son développement continu, nous accueillons toujours avec gratitude toute participation volontaire pour soutenir nos efforts. Merci !")
+    st.write('\n')
+    st.markdown("Guillaume M | [HavsQa](https://www.linkedin.com/in/guillaume-matilla-854228204/) | Prototype en vue d'une intégration dans un SaaS")
+    st.markdown("Il est possible de générer du contenu (mails, articles..) avec votre plume, notamment pour de l'emailing automatisé. Contactez-moi pour plus d'infos!")
     st.write('\n')  # add spacing
 
     st.subheader('\nDe quoi parle votre e-mail ?\n')
-    st.write(':information_source: La qualité de la production étant intimement liée, il vaut mieux fournir un contexte minimal. Par exemple, il serait plus judicieux de dire "Transmettre le devis à Monsieur X" plutôt que simplement "envoi devis".')
+    st.write(':red_circle: La qualité de la production étant intimement liée, il vaut mieux fournir un contexte minimal. Par exemple, il serait plus judicieux de dire "Transmettre le devis à Monsieur X" plutôt que simplement "envoi devis".')
     with st.expander("Corps du mail :inbox_tray:", expanded=True):
 
         input_c1 = st.text_input("Entrez le contenu de l'e-mail ci-dessous ! (actuellement 2 sujets séparés pris en charge)", 'Sujet 1')
