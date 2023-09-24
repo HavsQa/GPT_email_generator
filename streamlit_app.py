@@ -50,10 +50,6 @@ def gen_mail_contents(email_contents):
             frequency_penalty=0.0,
             presence_penalty=0.0)
 
-        rephrased_content =
-
-
-
         # replace existing topic text with updated
         email_contents[topic] = rephrased_content.get("choices")[0]['text']
     return email_contents
